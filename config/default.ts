@@ -1,5 +1,5 @@
 export default {
   port: 3000,
-  dbUri: "mongodb://localhost:27017/user-api-tutorial",
+  dbUri: "mongodb://localhost:27017/node-typescript-project2",
   logLevel: 'info'
 };

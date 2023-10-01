@@ -2,7 +2,7 @@ import config from 'config';
 import mongoose from 'mongoose';
 import log from './logger';
 
-export default async function connectToDb(){
+async function connectToDb(){
   const dbUri = config.get<string>('dbUri')
   try{
     await mongoose.connect(dbUri)
@@ -11,3 +11,5 @@ export default async function connectToDb(){
     process.exit(1)
   }
 }
+
+export default connectToDb;

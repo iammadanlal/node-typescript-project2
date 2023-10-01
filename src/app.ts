@@ -9,6 +9,6 @@ const app = express();
 const port = config.get<number>("port");
 
 app.listen(port, ()=> {
-    log.info(`Server running on port localhost:${port}`);
     connectToDb();
+    log.info(`Server running on port localhost:${port}`);
 })
