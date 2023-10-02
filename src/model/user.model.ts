@@ -1,5 +1,15 @@
-import { prop,getModelForClass, modelOptions, Severity } from "@typegoose/typegoose";
+import { prop,getModelForClass, modelOptions, Severity, pre } from "@typegoose/typegoose";
+import argon2 from "argon2";
 import { nanoid } from "nanoid";
+
+@pre<User>("save", async function(){
+  if(!this.isModified("password")){
+    return;
+  }
+  const hash = await argon2.hash(this.password);
+  this.password = hash;
+  return;
+})
 
 @modelOptions({
   schemaOptions: {
