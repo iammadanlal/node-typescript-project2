@@ -50,7 +50,7 @@ export class User {
     try{
       return await argon2.verify(this.password, candidatePassword);
     }catch(e){
-      log.error(e);
+      log.error(e, "Could not validate password");
       return false;
     }
   }
