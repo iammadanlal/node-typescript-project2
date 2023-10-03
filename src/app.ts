@@ -7,6 +7,10 @@ import router from "./routes";
 
 const app = express();
 
+// global config
+app.use(express.json());
+
+// router
 app.use(router)
 
 const port = config.get<number>("port");
