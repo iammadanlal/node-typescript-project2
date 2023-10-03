@@ -14,3 +14,5 @@ const validateResource = (schema: AnyZodObject) => (req:Request, res: Response, 
     return res.status(400).send(e.errors)
   }
 }
+
+export default validateResource;
